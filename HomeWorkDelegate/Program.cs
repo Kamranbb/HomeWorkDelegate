@@ -62,12 +62,25 @@ namespace HomeWorkDelegate
             new() { Id = Guid.NewGuid(), Age = 23, Name = "Kamran",Salary=456},
             new() { Id = Guid.NewGuid(), Age = 50, Name = "Ayxan",Salary=522 },
         };
-            
-            var existEmp= employees.FindAll(e=>e.Age>20&&e.Age<40);
-            foreach (var item in existEmp)
-            {
-                Console.WriteLine(item);
-            }
+
+            //var existEmp = employees.FindAll(e => e.Age > 20 && e.Age < 40);
+            //double sum = default;
+            //foreach (var item in existEmp)
+            //{
+            //    sum = item.Salary;
+            //}
+            //Console.WriteLine(sum / existEmp.Count);
+            var existEmp = employees.FindAll(e => e.Age > 20 && e.Age < 40);
+            var sumSalary= existEmp.Sum(e => e.Salary);
+            var minSalary = existEmp.Min(e => e.Salary);
+            var maxSalary = existEmp.Max(e => e.Salary);
+            var avgAverage = existEmp.Average(e => e.Salary);
+            Console.WriteLine(avgAverage);
+            Console.WriteLine(sumSalary);
+            Console.WriteLine(minSalary);
+            Console.WriteLine(maxSalary);
+
+
 
 
 
