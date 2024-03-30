@@ -8,15 +8,15 @@ namespace HomeWorkDelegate
         {
             #region Task1
             Person person2 = new Person();
-            person2.Id= Guid.NewGuid();  
+            person2.Id = Guid.NewGuid();
             person2.Name = "Test";
             person2.Salary = 2384;
-           Person person1 = new Person();
-            person1.Id= Guid.NewGuid();
+            Person person1 = new Person();
+            person1.Id = Guid.NewGuid();
             person1.Name = "Test";
             person1.Salary = 1233;
 
-            
+
 
             //List<Person> person = new List<Person>() {person2,person1};
             //foreach (var item in CalculateSalary(p=>p.Salary>1000&&p.Salary<2000,person))
@@ -40,7 +40,7 @@ namespace HomeWorkDelegate
             book.Id = Guid.NewGuid();
             book.Name = "Test";
             book.AuthorName = "Nizami";
-            Book book2 = new Book();    
+            Book book2 = new Book();
             book2.Id = Guid.NewGuid();
             book2.Name = "Test1";
             book2.AuthorName = "Nizami";
@@ -54,7 +54,25 @@ namespace HomeWorkDelegate
             //    return list.FindAll(predicate).Count;
             //}
 
-            #endregion 
+            #endregion
+            #region Task3
+            List<Employee> employees = new()
+            {
+            new(){Id= Guid.NewGuid(),Age=23,Name="Kamran",Salary=543},
+            new() { Id = Guid.NewGuid(), Age = 23, Name = "Kamran",Salary=456},
+            new() { Id = Guid.NewGuid(), Age = 50, Name = "Ayxan",Salary=522 },
+        };
+            
+            var existEmp= employees.FindAll(e=>e.Age>20&&e.Age<40);
+            foreach (var item in existEmp)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
+
+            #endregion
         }
 
     }
